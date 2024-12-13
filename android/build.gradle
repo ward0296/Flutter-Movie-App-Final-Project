@@ -1,0 +1,29 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.2' // Match the Gradle version with your Flutter setup
+    }
+}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Organize the build directory for all sub-projects
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+// Ensure app dependencies are resolved correctly
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+// Clean task for cleaning the build directory
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
