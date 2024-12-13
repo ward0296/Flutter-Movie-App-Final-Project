@@ -1,3 +1,3 @@
-# flutter_project_movie_app
+# Flutter Movie App Final Project
 
-A new Flutter project.
+## Created by: Ahmed Wardhere
